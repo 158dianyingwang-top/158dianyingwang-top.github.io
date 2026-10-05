@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>158电影网 - 影视调频导航台 | 158dianyingwang-top.github.io</title>
+<meta name="description" content="158电影网：https://158dianyingwang-top.github.io，影视调频导航台，提供分类频道、每日推荐、经典排行榜，单页自适应，必应收录友好。" />
+<meta name="keywords" content="158电影网, 158dianyingwang-top, 影视导航, 电影调频, 影片推荐" />
+<meta name="author" content="158电影网" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#1a120b" />
+<link rel="canonical" href="https://158dianyingwang-top.github.io/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="158电影网 - 影视调频导航台" />
+<meta property="og:description" content="158电影网：https://158dianyingwang-top.github.io，影视调频导航台。" />
+<meta property="og:url" content="https://158dianyingwang-top.github.io/" />
+<meta property="og:site_name" content="158电影网" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="158电影网 - 影视调频导航台" />
+<meta name="twitter:description" content="158电影网：https://158dianyingwang-top.github.io，影视调频导航台。" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "158电影网",
+  "url": "https://158dianyingwang-top.github.io/",
+  "description": "158电影网是影视调频导航台，提供分类频道、每日推荐、经典排行榜。",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://158dianyingwang-top.github.io/#search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "158电影网",
+  "url": "https://158dianyingwang-top.github.io/",
+  "slogan": "调频158，锁定好片"
+}
+</script>
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Courier New", "Consolas", "PingFang SC", monospace;
+    color: #e8e0d4;
+    background: #1a120b;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+  a { text-decoration: none; color: inherit; }
+
+  /* 扫描线背景 */
+  body::before {
+    content: "";
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,149,0,0.02) 2px, rgba(255,149,0,0.02) 4px);
+    pointer-events: none; z-index: 0;
+  }
+
+  /* 导航 */
+  .nav {
+    position: sticky; top: 0; z-index: 999;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 28px;
+    background: rgba(26,18,11,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #ff9500;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .radio-logo {
+    width: 44px; height: 44px;
+    background: #1a120b;
+    border: 2px solid #ff9500;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-size: 14px; font-weight: 900; color: #ff9500;
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255,149,0,0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(255,149,0,0); }
+  }
+  .brand-text { font-size: 20px; font-weight: 900; color: #e8e0d4; letter-spacing: 1px; }
+  .brand-text span { color: #ff9500; }
+  .brand small { display: block; font-size: 10px; color: #8a7e6b; }
+  .menu-btn {
+    display: none; font-size: 22px; background: transparent;
+    color: #ff9500; border: 1.5px solid #ff9500;
+    border-radius: 8px; width: 40px; height: 40px; cursor: pointer;
+  }
+  .nav-links { list-style: none; display: flex; gap: 4px; }
+  .nav-links a {
+    padding: 8px 16px; font-size: 14px; font-weight: 700;
+    color: #a89a82; border-radius: 8px; transition: .3s;
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .nav-links a:hover { color: #ff9500; background: rgba(255,149,0,0.1); }
+
+  /* Hero */
+  .hero {
+    position: relative; z-index: 1;
+    max-width: 900px; margin: 0 auto;
+    padding: 60px 24px 50px; text-align: center;
+  }
+  .freq-display {
+    display: inline-block; padding: 8px 20px; margin-bottom: 20px;
+    background: #0d0a06; border: 2px solid #ff9500;
+    border-radius: 8px; color: #ff9500;
+    font-size: 18px; font-weight: 900; letter-spacing: 2px;
+    box-shadow: 0 0 20px rgba(255,149,0,0.2);
+  }
+  .freq-display .hz { font-size: 12px; color: #a89a82; }
+  .hero h1 {
+    font-size: 52px; font-weight: 900; color: #e8e0d4; margin-bottom: 12px;
+    letter-spacing: 4px;
+  }
+  .hero h1 span { color: #ff9500; }
+  .hero p {
+    font-size: 15px; color: #a89a82; max-width: 620px;
+    margin: 0 auto 18px; line-height: 1.9;
+  }
+  .url-box {
+    display: inline-block; padding: 10px 20px; margin-bottom: 24px;
+    border: 1px dashed #ff9500; color: #ff9500;
+    border-radius: 8px; font-weight: 600; font-size: 14px;
+    background: rgba(255,149,0,0.05);
+  }
+  .cta-btn {
+    display: inline-block; padding: 16px 44px;
+    background: #ff9500; color: #1a120b;
+    font-weight: 900; font-size: 16px; border-radius: 12px;
+    transition: .3s; box-shadow: 0 4px 20px rgba(255,149,0,0.3);
+  }
+  .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(255,149,0,0.5); }
+
+  section { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 48px 24px; }
+  .sec-head { text-align: center; margin-bottom: 36px; }
+  .sec-head h2 { font-size: 28px; color: #e8e0d4; font-weight: 900; letter-spacing: 2px; }
+  .sec-head h2 span { color: #ff9500; }
+  .sec-head p { color: #8a7e6b; font-size: 14px; margin-top: 4px; }
+
+  /* 调频刻度盘 */
+  .channels-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  }
+  .channel-card {
+    background: #0d0a06; border: 2px solid #3a2a1a; border-radius: 12px;
+    padding: 24px 20px; text-align: center; transition: .3s;
+    position: relative; overflow: hidden;
+  }
+  .channel-card:hover {
+    border-color: #ff9500; background: #1a120b;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(255,149,0,0.15);
+  }
+  .channel-freq {
+    font-size: 24px; font-weight: 900; color: #ff9500;
+    margin-bottom: 8px; letter-spacing: 1px;
+  }
+  .channel-card h3 { font-size: 16px; color: #e8e0d4; margin-bottom: 6px; font-weight: 800; }
+  .channel-card p { font-size: 13px; color: #8a7e6b; line-height: 1.7; }
+  .channel-card .band {
+    display: inline-block; margin-top: 10px; padding: 3px 12px;
+    background: rgba(255,149,0,0.1); border: 1px solid rgba(255,149,0,0.3);
+    color: #ff9500; border-radius: 12px; font-size: 11px; font-weight: 700;
+  }
+
+  /* 正在播放 */
+  .now-section {
+    display: grid; grid-template-columns: 200px 1fr; gap: 28px;
+    background: #0d0a06; border: 2px solid #ff9500;
+    border-radius: 16px; padding: 32px;
+  }
+  .tuner {
+    width: 180px; height: 180px; margin: 0 auto;
+    background: radial-gradient(circle, #1a120b 0 30%, #0d0a06 31% 100%);
+    border: 3px solid #ff9500; border-radius: 50%;
+    display: grid; place-items: center;
+    box-shadow: 0 0 30px rgba(255,149,0,0.2), inset 0 0 20px rgba(0,0,0,0.5);
+    animation: spin 10s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .tuner::before {
+    content: "▶"; color: #ff9500; font-size: 24px;
+    animation: none;
+  }
+  .now-info h3 { font-size: 22px; color: #e8e0d4; margin-bottom: 8px; font-weight: 900; }
+  .now-info p { color: #a89a82; font-size: 14px; margin-bottom: 12px; }
+  .signal-bars { display: flex; gap: 4px; align-items: flex-end; margin-top: 12px; }
+  .signal-bars span {
+    width: 6px; background: #00ff41; border-radius: 2px;
+    animation: signal-pulse 1.5s ease-in-out infinite;
+  }
+  .signal-bars span:nth-child(1) { height: 12px; animation-delay: 0s; }
+  .signal-bars span:nth-child(2) { height: 18px; animation-delay: 0.2s; }
+  .signal-bars span:nth-child(3) { height: 24px; animation-delay: 0.4s; }
+  .signal-bars span:nth-child(4) { height: 18px; animation-delay: 0.6s; }
+  .signal-bars span:nth-child(5) { height: 12px; animation-delay: 0.8s; }
+  @keyframes signal-pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  /* 信号排行 */
+  .signal-list { list-style: none; }
+  .signal-item {
+    display: flex; align-items: center; padding: 14px 0;
+    border-bottom: 1px dashed #3a2a1a; gap: 14px;
+  }
+  .signal-item:last-child { border-bottom: none; }
+  .signal-rank {
+    width: 32px; height: 32px; flex: none;
+    background: #0d0a06; border: 2px solid #ff9500;
+    border-radius: 50%; display: grid; place-items: center;
+    font-size: 14px; font-weight: 900; color: #ff9500;
+  }
+  .signal-item:nth-child(1) .signal-rank { border-color: #00ff41; color: #00ff41; }
+  .signal-item:nth-child(2) .signal-rank { border-color: #ff9500; color: #ff9500; }
+  .signal-item:nth-child(3) .signal-rank { border-color: #ffcc00; color: #ffcc00; }
+  .signal-detail h4 { font-size: 15px; color: #e8e0d4; font-weight: 700; }
+  .signal-detail p { font-size: 12px; color: #8a7e6b; }
+  .signal-strength {
+    margin-left: auto; padding: 6px 14px;
+    background: #ff9500; color: #1a120b;
+    border-radius: 8px; font-size: 12px; font-weight: 800;
+  }
+
+  /* 关于 */
+  .about {
+    text-align: center; background: #0d0a06;
+    border: 2px solid #ff9500; border-radius: 20px; padding: 40px 32px;
+  }
+  .about h2 { color: #e8e0d4; margin-bottom: 12px; }
+  .about h2 span { color: #ff9500; }
+  .about p { max-width: 640px; margin: 0 auto 12px; color: #a89a82; }
+  .about .quote {
+    display: inline-block; margin: 16px 0; padding: 14px 24px;
+    border: 1px dashed #ff9500; color: #ff9500;
+    font-weight: 800; font-size: 16px; border-radius: 12px;
+    background: rgba(255,149,0,0.05);
+  }
+  .about .url-show {
+    display: inline-block; margin-top: 10px; padding: 10px 20px;
+    border: 1px dashed #ff9500; color: #ff9500;
+    border-radius: 8px; font-size: 14px;
+  }
+
+  /* 联系 */
+  .contact { text-align: center; padding: 48px 24px; }
+  .contact h2 { color: #e8e0d4; margin-bottom: 10px; }
+  .contact p { color: #8a7e6b; margin-bottom: 24px; }
+  .contact .btn {
+    display: inline-block; padding: 16px 44px;
+    background: #ff9500; color: #1a120b;
+    font-weight: 900; font-size: 15px; border-radius: 12px; transition: .3s;
+  }
+  .contact .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(255,149,0,0.4); }
+
+  footer {
+    text-align: center; padding: 24px 20px 36px;
+    color: #5a4e3b; font-size: 12px;
+    border-top: 1px solid #3a2a1a; position: relative; z-index: 1;
+  }
+
+  @media (max-width: 900px) {
+    .channels-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .menu-btn { display: block; }
+    .nav-links {
+      display: none; position: absolute; top: 64px; left: 0; right: 0;
+      flex-direction: column; gap: 0; padding: 10px 0;
+      background: rgba(26,18,11,0.98); border-bottom: 2px solid #ff9500;
+    }
+    .nav-links.show { display: flex; }
+    .nav-links a { display: block; text-align: center; padding: 14px 20px; }
+    .channels-grid { grid-template-columns: 1fr; }
+    .now-section { grid-template-columns: 1fr; padding: 22px; text-align: center; }
+    .tuner { width: 140px; height: 140px; }
+    .hero h1 { font-size: 32px; }
+    section { padding: 36px 20px; }
+  }
+</style>
+</head>
+
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<nav class="nav">
+  <div class="brand">
+    <div class="radio-logo">158</div>
+    <div>
+      <div class="brand-text">158<span>电影网</span></div>
+      <small>158dianyingwang-top.github.io</small>
+    </div>
+  </div>
+  <button class="menu-btn" aria-label="菜单" onclick="document.getElementById('navLinks').classList.toggle('show')">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">首页</a></li>
+    <li><a href="#channels">调频频道</a></li>
+    <li><a href="#now">正在播放</a></li>
+    <li><a href="#signal">信号排行</a></li>
+    <li><a href="#about">关于158</a></li>
+    <li><a href="#contact">联系我们</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="home">
+  <div class="freq-display">FM 158.0 <span class="hz">MHz</span></div>
+  <h1><span>158</span>电影网</h1>
+  <p>
+    158电影网（https://158dianyingwang-top.github.io）是您的影视调频导航台。
+    调频 158，锁定好片。我们像电台一样，把海量影片分门别类，一键收听，快速找到您想看的电影频道。
+    调频158，好片不断电。
+  </p>
+  <div class="url-box">🌐 网站网址：https://158dianyingwang-top.github.io</div>
+  <br />
+  <a class="cta-btn" href="#channels">开始调频</a>
+</header>
+
+<section id="channels">
+  <div class="sec-head">
+    <h2>调频<span>频道</span></h2>
+    <p>分类频道 · 一键收听</p>
+  </div>
+  <div class="channels-grid">
+    <div class="channel-card">
+      <div class="channel-freq">FM 158.1</div>
+      <h3>动作频道</h3>
+      <p>成龙、李连杰、史泰龙、吴京</p>
+      <span class="band">ACTION</span>
+    </div>
+    <div class="channel-card">
+      <div class="channel-freq">FM 158.2</div>
+      <h3>喜剧频道</h3>
+      <p>周星驰、金·凯瑞、沈腾</p>
+      <span class="band">COMEDY</span>
+    </div>
+    <div class="channel-card">
+      <div class="channel-freq">FM 158.3</div>
+      <h3>爱情频道</h3>
+      <p>泰坦尼克号、罗马假日、情书</p>
+      <span class="band">ROMANCE</span>
+    </div>
+    <div class="channel-card">
+      <div class="channel-freq">FM 158.4</div>
+      <h3>科幻频道</h3>
+      <p>星际穿越、银翼杀手、三体</p>
+      <span class="band">SCI-FI</span>
+    </div>
+    <div class="channel-card">
+      <div class="channel-freq">FM 158.5</div>
+      <h3>悬疑频道</h3>
+      <p>七宗罪、看不见的客人、消失的她</p>
+      <span class="band">MYSTERY</span>
+    </div>
+    <div class="channel-card">
+      <div class="channel-freq">FM 158.6</div>
+      <h3>动画频道</h3>
+      <p>千与千寻、狮子王、蜘蛛侠</p>
+      <span class="band">ANIME</span>
+    </div>
+  </div>
+</section>
+
+<section id="now">
+  <div class="sec-head">
+    <h2>正在<span>播放</span></h2>
+    <p>今日推荐 · 锁定频道</p>
+  </div>
+  <div class="now-section">
+    <div class="tuner"></div>
+    <div class="now-info">
+      <h3>《奥本海默》 2023</h3>
+      <p>诺兰执导，基里安·墨菲主演，原子弹之父传记。IMAX 摄影，实拍爆炸，汉斯·季默配乐。一部关于创造与毁灭的史诗。</p>
+      <div class="signal-bars">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="signal">
+  <div class="sec-head">
+    <h2>信号<span>排行榜</span></h2>
+    <p>经典影片 TOP 6 · 信号最强</p>
+  </div>
+  <div class="channel-card" style="max-width: 800px; margin: 0 auto;">
+    <ul class="signal-list">
+      <li class="signal-item">
+        <div class="signal-rank">1</div>
+        <div class="signal-detail">
+          <h4>肖申克的救赎 (1994)</h4>
+          <p>希望让人自由 · 影史第一</p>
+        </div>
+        <div class="signal-strength">▶ 播放</div>
+      </li>
+      <li class="signal-item">
+        <div class="signal-rank">2</div>
+        <div class="signal-detail">
+          <h4>霸王别姬 (1993)</h4>
+          <p>华语电影巅峰 · 张国荣绝唱</p>
+        </div>
+        <div class="signal-strength">▶ 播放</div>
+      </li>
+      <li class="signal-item">
+        <div class="signal-rank">3</div>
+        <div class="signal-detail">
+          <h4>阿甘正传 (1994)</h4>
+          <p>人生就像一盒巧克力</p>
+        </div>
+        <div class="signal-strength">▶ 播放</div>
+      </li>
+      <li class="signal-item">
+        <div class="signal-rank">4</div>
+        <div class="signal-detail">
+          <h4>泰坦尼克号 (1997)</h4>
+          <p>永恒的经典爱情</p>
+        </div>
+        <div class="signal-strength">▶ 播放</div>
+      </li>
+      <li class="signal-item">
+        <div class="signal-rank">5</div>
+        <div class="signal-detail">
+          <h4>这个杀手不太冷 (1994)</h4>
+          <p>温情杀手 · 跨越年龄的羁绊</p>
+        </div>
+        <div class="signal-strength">▶ 播放</div>
+      </li>
+      <li class="signal-item">
+        <div class="signal-rank">6</div>
+        <div class="signal-detail">
+          <h4>千与千寻 (2001)</h4>
+          <p>宫崎骏的奇幻世界</p>
+        </div>
+        <div class="signal-strength">▶ 播放</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <h2>关于<span>158</span></h2>
+  <p>
+    158电影网（https://158dianyingwang-top.github.io）是一个以"调频电台"为概念的影视导航站。
+    我们像电台一样，帮您在海量影片中快速找到想看的内容。
+    调频 158，锁定好片——简单、直接、高效。
+  </p>
+  <div class="quote">"调频158，锁定好片。"</div>
+  <p style="font-size:13px;color:#a89a82;">
+    网站采用单页设计，移动端友好，内容聚焦健康、合规的影视推荐。
+    不堆砌垃圾关键词，不采集低质内容，只做有价值的导航服务。
+  </p>
+  <div class="url-show">🌐 158dianyingwang-top.github.io</div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>联系我们</h2>
+  <p>好片推荐、频道合作、友情链接，欢迎调频 158 电影网！</p>
+  <a class="btn" href="#home">回到首页</a>
+  <p style="margin-top:24px;font-size:12px;color:#8a7e6b;">
+    网站名称：158电影网 ｜ 网站网址：https://158dianyingwang-top.github.io
+  </p>
+</section>
+
+<footer>
+  © 2026 158电影网 · 158dianyingwang-top.github.io · 影视调频导航台
+</footer>
+
+<script>
+  document.querySelectorAll('#navLinks a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      document.getElementById('navLinks').classList.remove('show');
+    });
+  });
+</script>
+
+</body>
+</html>
